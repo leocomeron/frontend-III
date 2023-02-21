@@ -1,0 +1,6 @@
+.button {
+  background-color: cornflowerblue;
+}
+.button:hover {
+  background-color: darkturquoise;
+}
