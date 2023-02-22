@@ -1,5 +1,11 @@
 const Item = (prop) => {
-  return <li>Color: {prop.name}</li>;
+  return (
+    <div>
+      <li>Color: {prop.name}</li>
+    </div>
+  );
 };
 
 export default Item;
+
+// <></>
