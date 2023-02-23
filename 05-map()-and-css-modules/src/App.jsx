@@ -1,8 +1,11 @@
 import "./App.css";
-import FunctionButton from "./components/Button";
-import Item from "./components/Item";
 
-const colors = ["red", "blue", "black", "white"];
+import FunctionButton from "./components/Button";
+import Calculator from "./components/Calculator";
+import Item from "./components/Item";
+import Text from "./components/Text";
+
+const titles = ["Breaking Bad", "The Office", "Prison Break", "Friends"];
 
 // const colors = [
 //   { name: "red", isPrimary: true },
@@ -14,16 +17,7 @@ const colors = ["red", "blue", "black", "white"];
 function App() {
   return (
     <div className="App">
-      <>
-        <h1>My colors</h1>
-        <ul>
-          {colors.map((color) => (
-            <Item name={color}>
-              <FunctionButton />
-            </Item>
-          ))}
-        </ul>
-      </>
+      <Calculator />
     </div>
   );
 }
