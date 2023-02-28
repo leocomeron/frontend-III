@@ -1,15 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import CounterFunctional from "./components/CounterFunctional";
+import List from "./components/Lists";
+import Switcher from "./components/Switcher";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <h1>useState hook</h1>
-      <div className="card">
-        <button onClick={() => setCount(count + 1)}>count is {count}</button>
-      </div>
+      <List />
     </div>
   );
 }

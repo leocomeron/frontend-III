@@ -6,10 +6,13 @@ const Switcher = () => {
   const toggleTextHandler = () => {
     setIsTextVisible(!isTextVisible);
   };
+
   return (
     <>
-      {isTextVisible && <p>Text to hide</p>}
-      <button onClick={toggleTextHandler}>Click to hide</button>
+      {isTextVisible ? <p>Text to hide</p> : null}
+      <button onClick={toggleTextHandler}>
+        Click to {isTextVisible ? "hide" : "show"}
+      </button>
     </>
   );
 };

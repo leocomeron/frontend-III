@@ -1,7 +1,6 @@
 import React from "react";
 
 // ----- State handle using Class Component -------------
-
 class CounterClassComponent extends React.Component {
   constructor(props) {
     super(props);
