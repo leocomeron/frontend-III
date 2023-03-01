@@ -9,13 +9,14 @@ function Form() {
       <h1>Mi inscripción</h1>
       <form onSubmit={signUpUser}>
         <div>
-          <input type="text" placeholder="Escriba su nombre" />
+          <input
+            type="text"
+            placeholder="Escriba su nombre"
+            onChange={() => {}}
+          />
         </div>
         <div>
-          <input type="password" placeholder="Escriba su contraseña" />
-        </div>
-        <div>
-          <input type="submit" value="Guardar" />
+          <button type="submit">Guardar</button>
         </div>
       </form>
     </div>

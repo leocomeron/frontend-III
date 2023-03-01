@@ -1,6 +1,6 @@
 function Event({ number }) {
   function myEvent() {
-    console.log(`Disparado evento ${number}`);
+    alert(`Disparado evento ${number}`);
   }
   return (
     <div>
