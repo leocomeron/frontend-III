@@ -1,11 +1,11 @@
 .input {
-  border: 2px darkblue;
+  border: 2px solid white;
   border-radius: 1rem;
   text-align: center;
 }
 
 .inputError {
-  border-color: red;
+  border: 2px solid red;
   border-radius: 1rem;
   text-align: center;
 }
