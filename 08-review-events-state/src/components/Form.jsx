@@ -44,6 +44,10 @@ function Form() {
   return (
     <div className={styles.container}>
       <h2>Contador de alumnos por sala</h2>
+      <h5>
+        Vamos a ir agregando a qué sala se inscribió cada alumno para poder
+        hacer un recuento. Nota: En algunos casos la sala puede no existir
+      </h5>
 
       <form onSubmit={handleSubtmit}>
         <select
