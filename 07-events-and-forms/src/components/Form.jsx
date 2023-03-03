@@ -1,41 +1,40 @@
 import { useState } from "react";
-import style from "./Form.module.css";
+import styles from "./Form.module.css";
 
 function Form() {
+  // Seteo todos mis estados y les doy un valor inicial
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [isErrorName, setIsErrorName] = useState(false);
 
-  const validateName = (name) => {
-    if (name.length > 10) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  // creo una variable boolean para mi validación
+  const isValidName = name.length > 10;
 
+  // Función cuando se dispara onSubmit event
   function signUpUser(e) {
     e.preventDefault();
 
-    if (validateName(name)) {
+    if (isValidName) {
       setIsErrorName(false);
       console.log("Usuario guardado");
+      alert(`nombre: ${name} - Password: ${password}`);
     } else {
       setIsErrorName(true);
       console.log("Tu nombre tiene menos de 10 caracteres");
     }
+    // Reseteo el valor del input name
     setName("");
   }
 
+  // Función cuando se dispara onChange event en el name input
   const onNameChange = (e) => {
     setName(e.target.value);
   };
 
+  // Función cuando se dispara onChange event en el password input
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
-  console.log(password);
-  console.log(name);
 
   return (
     <>
@@ -43,7 +42,7 @@ function Form() {
       <form onSubmit={signUpUser}>
         <div>
           <input
-            className={!isErrorName ? style.input : style.inputError}
+            className={!isErrorName ? styles.input : styles.inputError}
             type="text"
             placeholder="Escriba su nombre"
             value={name}
@@ -53,8 +52,10 @@ function Form() {
         {isErrorName && <p>Hay un error!</p>}
         <div>
           <input
+            className={styles.input}
             type="password"
             placeholder="Escriba su password"
+            value={password}
             onChange={onChangePassword}
           />
         </div>
