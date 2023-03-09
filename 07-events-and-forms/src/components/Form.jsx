@@ -78,7 +78,7 @@ function Form() {
           <option value="Buenavida">Dr. Buenavida</option>
         </select>
         <div>
-          <button type="submit">Guardar</button>
+          <button type="submit">Gudar</button>
         </div>
       </form>
       {showCard && (
