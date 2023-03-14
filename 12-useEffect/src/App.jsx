@@ -7,11 +7,12 @@ export default function App() {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setPedidos([...pedidos, "1 Pizza Fugazzeta"]);
-    }, 2000);
-
-    return () => clearTimeout();
+    if (fetchPedidos) {
+      setTimeout(() => {
+        setCount(count + 1);
+        setPedidos([...pedidos, `Pizza Fugazzeta numero ${count}`]);
+      }, 2000);
+    }
   }, [pedidos]);
 
   const handleClick = () => {
@@ -21,9 +22,8 @@ export default function App() {
   return (
     <div className="App">
       <h1>Ciclo de Vida</h1>
-      <h2>Presionaste el botón {count} veces</h2>
       {pedidos.map((pedido) => (
-        <li>{pedido}</li>
+        <li key={pedido}>{pedido}</li>
       ))}
       <button onClick={handleClick}>Detener pedidos</button>
     </div>
