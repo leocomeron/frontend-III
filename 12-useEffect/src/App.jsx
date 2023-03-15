@@ -13,6 +13,7 @@ export default function App() {
         setPedidos([...pedidos, `Pizza Fugazzeta numero ${count}`]);
       }, 2000);
     }
+    return () => clearTimeout();
   }, [pedidos]);
 
   const handleClick = () => {
