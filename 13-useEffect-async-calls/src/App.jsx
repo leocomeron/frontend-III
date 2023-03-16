@@ -3,8 +3,6 @@ import "./App.css";
 import Card from "./components/Card";
 import Loader from "./components/Loader";
 
-// https://official-joke-api.appspot.com/jokes/programming/random
-
 export default function App() {
   const [bromas, setBromas] = useState([]);
   const [reload, setReload] = useState(false);
