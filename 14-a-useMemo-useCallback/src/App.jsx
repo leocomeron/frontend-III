@@ -1,30 +1,31 @@
 import React, { useCallback, useState } from "react";
 import "./App.css";
 
-const Button = ({ handleClick, name }) => {
+const Button = React.memo(({ handleClick, name }) => {
   console.log(`${name} rendered`);
   return <button onClick={handleClick}>{name}</button>;
-};
+});
 
 const Counter = () => {
   console.log("counter rendered");
   const [countOne, setCountOne] = useState(0);
   const [countTwo, setCountTwo] = useState(0);
-  // const memoizedSetCountOne = useCallback(
-  //   () => setCountOne(countOne + 1),
-  //   [countOne]
-  // );
 
-  // const memoizedSetCountTwo = useCallback(
-  //   () => setCountTwo(countTwo + 1),
-  //   [countTwo]
-  // );
+  const memoizedSetCountOne = useCallback(
+    () => setCountOne(countOne + 1),
+    [countOne]
+  );
+
+  const memoizedSetCountTwo = useCallback(
+    () => setCountTwo(countTwo + 1),
+    [countTwo]
+  );
 
   return (
     <>
       {countOne} {countTwo}
-      <Button handleClick={() => setCountOne(countOne + 1)} name="button1" />
-      <Button handleClick={() => setCountTwo(countTwo + 1)} name="button2" />
+      <Button handleClick={memoizedSetCountOne} name="button1" />
+      <Button handleClick={memoizedSetCountTwo} name="button2" />
     </>
   );
 };

@@ -8,6 +8,7 @@ export default function App() {
   const [course, setCourse] = useState("");
   const [teacher, setTeacher] = useState("");
   const [duration, setDuration] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     getCourses();
@@ -19,11 +20,20 @@ export default function App() {
     setDuration("");
     setTeacher("");
   }
-
+  // "api/courses"
   async function getCourses() {
-    await axios.get("api/courses").then((response) => {
-      setCourses(response.data.courses);
-    });
+    try {
+      const res = await fetch();
+      const data = await res.json();
+      setCourse(data);
+    } catch (err) {
+      setError(err);
+    }
+
+    await fetch("api/courses")
+      .then((res) => res.json())
+      .then((data) => setCourses(data.courses))
+      .catch((err) => setError(err));
   }
 
   function fillStates(course) {

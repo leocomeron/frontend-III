@@ -13,17 +13,17 @@ createServer({
   },
   seeds(server) {
     server.create("course", {
-      name: "Desenvolvimento Frontend",
+      name: "Frontend I",
       duration: 80,
       teacher: "Wesley",
     });
     server.create("course", {
-      name: "Desenvolvimento Mobile",
+      name: "Frontend II",
       duration: 100,
       teacher: "Bruno",
     });
     server.create("course", {
-      name: "Desenvolvimento FullStack",
+      name: "Fullstack",
       duration: 80,
       teacher: "Ana",
     });
