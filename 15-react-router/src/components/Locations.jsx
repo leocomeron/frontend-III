@@ -18,14 +18,16 @@ const Locations = () => {
       <h1>Locations List</h1>
       <table>
         <thead>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Dimension</th>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Dimension</th>
+          </tr>
         </thead>
         <tbody>
           {locations.length
             ? locations.map((lc) => (
-                <tr>
+                <tr key={lc.name}>
                   <td>{lc.name}</td>
                   <td>{lc.type}</td>
                   <td>{lc.dimension}</td>

@@ -19,17 +19,19 @@ const Characters = () => {
       <h1>Characters List</h1>
       <table>
         <thead>
-          <th>Name</th>
-          <th>Status</th>
-          <th>Species</th>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Species</th>
+          </tr>
         </thead>
         <tbody>
           {characters.length
             ? characters.map((ch) => (
-                <tr>
-                  <Link to={`${ch.name}`}>
-                    <td>{ch.name}</td>
-                  </Link>
+                <tr key={ch.name}>
+                  <td>
+                    <Link to={`${ch.name}`}>{ch.name} </Link>
+                  </td>
                   <td>{ch.status}</td>
                   <td>{ch.species}</td>
                 </tr>
