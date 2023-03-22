@@ -1,7 +1,10 @@
+import styles from "./Card.module.css";
+
 const Card = ({ nombre, curso }) => {
   return (
-    <div>
-      Hola {nombre} te inscribiste a el curso {curso}
+    <div className={styles.card}>
+      <div>Hola {nombre}</div>
+      <div>Te inscribiste al curso {curso}</div>
     </div>
   );
 };
