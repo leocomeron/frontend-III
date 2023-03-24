@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Mouse 2.4 MO251",
+    "price": "$ 24,99",
+    "brand": "Multilaser",
+    "image": "https://m.media-amazon.com/images/I/615iBXULp8L._AC_SL1000_.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio leo, dictum nec sem nec, laoreet pretium sem. Maecenas ut tortor vel mi faucibus sagittis. Phasellus in molestie turpis, hendrerit ultrices magna. Etiam at interdum risus, quis porta enim. Sed vehicula nibh quis consequat posuere. Quisque viverra efficitur dapibus. Sed imperdiet blandit tellus, non malesuada ipsum egestas at. Integer condimentum risus vel nulla elementum, a tincidunt nulla dignissim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur consequat maximus tempor. Suspendisse nec convallis purus. Suspendisse tristique ligula a ipsum pulvinar euismod. Maecenas aliquam nisi sollicitudin mi cursus, vitae volutpat metus aliquam. Praesent velit mi, efficitur sed luctus ut, facilisis at velit. Fusce malesuada porta ullamcorper. Mauris id imperdiet velit. Ut non justo at justo facilisis dapibus sed a nunc. Nullam nisl lorem, rutrum quis efficitur efficitur, rhoncus nec sem."
+  },
+  {
+    "id": 2,
+    "name": "Multifuncional Epson EcoTank L3250",
+    "price": "$ 348,99",
+    "brand": "Epson",
+    "image": "https://m.media-amazon.com/images/I/818P+qYvSHS._AC_SL1500_.jpg",
+    "description": "Multifuncional EcoTank L3250. Bajo costo de impresión: imprima hasta 4500 páginas en negro o 7500 páginas en color con un kit de botellas de tinta de repuesto originales de Epson. Fiabilidad y rendimiento inigualables: la tecnología MicroPiezo Heat-Free de Epson garantiza una larga vida útil del producto y una impresión sin calor de alta calidad y alto rendimiento. Mayor movilidad: configura, opera y soluciona problemas de forma remota a través de la nueva e intuitiva aplicación Epson Smart Panel. Conectividad avanzada: con cable USB, Wi-Fi, Wi-Fi Direct y red Ethernet para grupos de trabajo."
+  },
+  {
+    "id": 3,
+    "name": "Headphone Havit HV-H2002d",
+    "price": "$ 114,99",
+    "brand": "Havit",
+    "image": "https://m.media-amazon.com/images/I/41wTbMic2eL._AC_.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio leo, dijo ni sem ni sem, laoreet pretium sem Mecenas como torturador o mi garganta con flechas. Hendrerit ultrices magna Sí, pero a veces hay una sonrisa, ¿quién es la puerta? Pero son los vehículos del Nibh quienes ponen el resultado. Cada caricatura está hecha de proteína. Pero la tierra se ve halagada por la inversión, pero no se espera la necesidad en sí. No hay ningún elemento de humor en toda la historia, ni dignidad por parte de los desarrolladores. La clase es apta para los camaradas silenciosos que se vuelven hacia las costas a través de nuestros matrimonios, a través de los proyectos himeneanos. Charlé con él el momento más importante. Ni siquiera un puro valle. Suspendisse sad ligula a ipsum pulvinar Euismod. Si tan solo tuviera algún cuidado por mi curso, algún temor por la vida de mi vida. Es mi voluntad, está hecho, pero es fácil llorar. Fusce malesuada porta ullamcorper. Mauris quiere financiarlo. No solo con las proteínas fáciles, sino de ahora en adelante. Sin noticias, sin maquillaje, sin maquillaje, sin CNN."
+  }
+]
