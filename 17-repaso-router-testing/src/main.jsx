@@ -7,6 +7,7 @@ import Characters from "./components/Characters";
 import Locations from "./components/Locations";
 import Episodes from "./components/Episodes";
 import Character from "./components/Character";
+import ErrorPage from "./components/ErrorPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="locations" element={<Locations />} />
           <Route path="episodes" element={<Episodes />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,16 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "../src/App";
 
 describe("App", () => {
-  it("renders headline", () => {
+  test("renders back button", () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
-    const backButton = screen.queryByText("Back");
+
+    const backButton = screen.getByText("Back");
 
     expect(backButton).toBeInTheDocument();
   });
