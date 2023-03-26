@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import ItemList from "../../components/ItemList";
 import { useEffect, useState } from "react";
-// import products from "../../products.json";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
   function openDetail(id) {
@@ -17,13 +17,29 @@ const Home = () => {
       .then((data) => setProducts(data));
   };
 
+  const getCategories = async () => {
+    fetch("https://fakestoreapi.com/products/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  };
+
   useEffect(() => {
     getProducts();
+    getCategories();
   }, []);
 
   return (
     <div>
-      <h1>Productos</h1>
+      <h2>Categorias</h2>
+      {categories.map((category) => (
+        <button
+          key={category}
+          onClick={() => navigate(`/products/category/${category}`)}
+        >
+          {category}
+        </button>
+      ))}
+      <h2>Todos los productos</h2>
       <ul>
         {products.map((product) => (
           <ItemList key={product.id} product={product} onClick={openDetail} />

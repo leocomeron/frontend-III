@@ -2,7 +2,7 @@ import styles from "../../styles.module.css";
 
 const ItemList = ({ product, onClick }) => {
   const handleClick = () => {
-    if (false) {
+    if (true) {
       onClick(product.id);
     }
   };
