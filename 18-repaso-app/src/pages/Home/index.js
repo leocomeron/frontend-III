@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import ItemList from "../../components/ItemList";
 import { useEffect, useState } from "react";
+import Form from "../../components/Form";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,6 @@ const Home = () => {
   function openDetail(id) {
     navigate(`/details/${id}`);
   }
-
   const getProducts = async () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
