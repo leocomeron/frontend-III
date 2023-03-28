@@ -1,10 +1,15 @@
 import styles from "../../styles.module.css";
 
-const ItemList = ({ product, onClick }) => {
+const ItemList = ({ product, onClick, isLoggedIn }) => {
   const handleClick = () => {
-    if (true) {
-      onClick(product.id);
+    onClick(product.id);
+  };
+
+  const handleAddToCart = () => {
+    if (!isLoggedIn) {
+      return alert("NO ESTAS LOGGEADO");
     }
+    alert("agregado al carrito");
   };
 
   return (
@@ -19,6 +24,9 @@ const ItemList = ({ product, onClick }) => {
         <p className={styles.price_list}>${product.price}</p>
         <button className={styles.button} onClick={handleClick}>
           Ver detalles
+        </button>
+        <button className={styles.button} onClick={handleAddToCart}>
+          Agregar al carrito
         </button>
       </div>
     </li>

@@ -6,11 +6,24 @@ import Form from "../../components/Form";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [name, setName] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const navigate = useNavigate();
 
   function openDetail(id) {
     navigate(`/details/${id}`);
   }
+
+  function handleOnSubmit(e) {
+    e.preventDefault();
+    setIsLoggedIn(true);
+  }
+
+  function handleOnNameChange(e) {
+    setName(e.target.value);
+  }
+
   const getProducts = async () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -30,6 +43,11 @@ const Home = () => {
 
   return (
     <div>
+      <Form
+        onSubmit={handleOnSubmit}
+        onNameChange={handleOnNameChange}
+        name={name}
+      />
       <h2>Categorias</h2>
       {categories.map((category) => (
         <button
@@ -42,7 +60,12 @@ const Home = () => {
       <h2>Todos los productos</h2>
       <ul>
         {products.map((product) => (
-          <ItemList key={product.id} product={product} onClick={openDetail} />
+          <ItemList
+            isLoggedIn={isLoggedIn}
+            key={product.id}
+            product={product}
+            onClick={openDetail}
+          />
         ))}
       </ul>
     </div>
