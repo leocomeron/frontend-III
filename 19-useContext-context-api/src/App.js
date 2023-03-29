@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Body from "./components/Body";
 import Layout from "./components/Layout";
+import ThemeContext from "./context";
 
 export const themes = {
   light: {
@@ -25,10 +26,12 @@ function App() {
 
   return (
     <div className="App">
-      <Layout theme={theme}>
-        <Navbar onClick={handleChangeTheme} theme={theme} />
-        <Body />
-      </Layout>
+      <ThemeContext.Provider value={{ theme, handleChangeTheme }}>
+        <Layout>
+          <Navbar />
+          <Body />
+        </Layout>
+      </ThemeContext.Provider>
     </div>
   );
 }

@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../App.css";
 import ThemeToggleButton from "./ThemeToggleButton";
 
-const Navbar = ({ onClick, theme }) => {
+const Navbar = () => {
   return (
     <div className="navbar">
       <p>Home</p>
-      <ThemeToggleButton onClick={onClick} theme={theme} />
+      <ThemeToggleButton />
     </div>
   );
 };
