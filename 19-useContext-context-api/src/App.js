@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Body from "./components/Body";
@@ -17,12 +17,18 @@ export const themes = {
 };
 
 function App() {
-  const [theme, setTheme] = useState(themes.light);
+  const localValue = JSON.parse(localStorage.getItem("theme"));
+
+  const [theme, setTheme] = useState(localValue ?? themes.light);
 
   // Funcion que altera el estado del tema
   const handleChangeTheme = () => {
     theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
   };
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   return (
     <div className="App">

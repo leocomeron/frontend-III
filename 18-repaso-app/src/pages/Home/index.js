@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import ItemList from "../../components/ItemList";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Form from "../../components/Form";
+import { ProductsContext } from "../../context";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const { products, categories } = useContext(ProductsContext);
+
   const [name, setName] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -23,23 +24,6 @@ const Home = () => {
   function handleOnNameChange(e) {
     setName(e.target.value);
   }
-
-  const getProducts = async () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  };
-
-  const getCategories = async () => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  };
-
-  useEffect(() => {
-    getProducts();
-    getCategories();
-  }, []);
 
   return (
     <div>
