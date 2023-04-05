@@ -1,9 +1,29 @@
 import useAxiosFetch from "./useAxiosFetch";
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const { error, loading, response } = useAxiosFetch(
-    "https://jsonplaceholder.typicode.com/posts"
-  );
+  const [response, setResponse] = useState(null);
+  const [error, setError] = useState("");
+  const [loading, setloading] = useState(true);
+
+  useEffect(() => {
+    if (!url) {
+      return;
+    }
+
+    const fetch = async () => {
+      setloading(true);
+      try {
+        const result = await axios.get(url);
+        setResponse(result.data);
+      } catch (error) {
+        setError(error);
+      }
+      setloading(false);
+    };
+
+    fetch();
+  }, [url]);
 
   return (
     <div className="App">
