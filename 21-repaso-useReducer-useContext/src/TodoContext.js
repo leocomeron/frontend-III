@@ -26,11 +26,6 @@ const reducer = (state, action) => {
   }
 };
 
-state = {
-  isDark: false,
-  favs: [],
-};
-
 export const TodoContext = createContext();
 
 const TodoContextProvider = ({ children }) => {
