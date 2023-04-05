@@ -12,25 +12,29 @@ const saveTodosFromStorage = (todos) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case "add_todo":
-      saveTodosFromStorage([...state, action.payload]);
-      return [...state, action.payload];
+      const newState = [...state, action.payload];
+      saveTodosFromStorage(newState);
+      return newState;
 
     case "remove_todo":
-      const todosFiltered = state.filter(
-        (item) => item.id !== action.payload.id
-      );
-      saveTodosFromStorage(todosFiltered);
-      return todosFiltered;
+      const filteredTodos = state.filter((item) => item.id !== action.payload);
+      saveTodosFromStorage(filteredTodos);
+      return filteredTodos;
 
     default:
       return state;
   }
 };
 
+state = {
+  isDark: false,
+  favs: [],
+};
+
 export const TodoContext = createContext();
 
 const TodoContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, {}, getTodosFromStorage);
+  const [state, dispatch] = useReducer(reducer, getTodosFromStorage());
 
   return (
     <TodoContext.Provider value={{ state, dispatch }}>

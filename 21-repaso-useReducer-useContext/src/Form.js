@@ -3,26 +3,25 @@ import { TodoContext } from "./TodoContext";
 import "./styles.css";
 
 export function Form() {
+  const { dispatch, isDark } = useContext(TodoContext);
   const [inputTodo, setInputTodo] = useState("");
-  const { dispatch } = useContext(TodoContext);
 
   function addTask() {
     dispatch({
       type: "add_todo",
       payload: {
+        task: inputTodo,
         id: Date.now(),
-        task: inputTodo
-      }
+      },
     });
-    setInputTodo("");
   }
 
   return (
     <form>
       <input
-        placeholder="Nova task"
+        placeholder="Nuevo task"
         value={inputTodo}
-        onChange={(event) => setInputTodo(event.target.value)}
+        onChange={(e) => setInputTodo(e.target.value)}
       />
       <button type="button" onClick={addTask}>
         Add task

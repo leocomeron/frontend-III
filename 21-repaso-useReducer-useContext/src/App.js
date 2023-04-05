@@ -4,20 +4,24 @@ import { Form } from "./Form";
 import "./styles.css";
 
 export default function App() {
-  const { state: todos, dispatch } = useContext(TodoContext);
+  const { state, dispatch } = useContext(TodoContext);
 
-  function removeTodo(id) {
-    dispatch({ type: "remove_todo", payload: { id } });
-  }
-
+  console.log(state);
   return (
     <div className="App">
       <Form />
       <ul>
-        {todos.map((todo) => (
+        {state?.map((todo) => (
           <div key={todo.id} className="container_task">
             <li>{todo.task}</li>
-            <button onClick={() => removeTodo(todo.id)}>Eliminar</button>
+            <button
+              onClick={() => {
+                console.log(todo.id);
+                dispatch({ type: "remove_todo", payload: todo.id });
+              }}
+            >
+              Eliminar
+            </button>
           </div>
         ))}
       </ul>

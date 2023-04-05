@@ -1,5 +1,7 @@
-import useAxiosFetch from "./useAxiosFetch";
+import axios from "axios";
 import { useState, useEffect } from "react";
+
+const url = "https://jsonplaceholder.typicode.com/posts";
 
 export default function App() {
   const [response, setResponse] = useState(null);
@@ -32,7 +34,7 @@ export default function App() {
       {response?.length ? (
         <ul>
           {response.map((item) => (
-            <li key={item.id}>{JSON.stringify(item)}</li>
+            <li key={item.id}>{JSON.stringify(item.title)}</li>
           ))}
         </ul>
       ) : null}
