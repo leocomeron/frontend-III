@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {loading ? <h2>Carregando...</h2> : null}
+      {loading ? <h2>Cargando...</h2> : null}
       {error ? <h2>{error}</h2> : null}
       {response?.length ? (
         <ul>
