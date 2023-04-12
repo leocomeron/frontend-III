@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <ToastContainer />
       <ErrorBoundary>
-        <Pokemon pokemon="charizard" /> {/* Success en la request */}
-        {/* <Pokemon pokemon="charizards" /> */} {/* Error */}
+        <Pokemon pokemon="charizard" />
+        {/* <Pokemon pokemon="__ERROR__" /> */}
       </ErrorBoundary>
     </div>
   );
