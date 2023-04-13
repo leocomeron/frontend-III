@@ -18,17 +18,9 @@ const fakeUsers = [
 
 describe("App", () => {
   describe("Cuando finaliza la carga", () => {
-    test("No debe mostrar el cargando", async () => {
-
-    });
-    test("Debe mostrar el titulo de Usuarios", async () => {
-
-    });
-    test("Debe mostrar el username", async () => {
-
-    });
-    test("Debe mostrar el nombre del usuario", async () => {
-
-    });
+    test("No debe mostrar el cargando", async () => {});
+    test("Debe mostrar el titulo de Usuarios", async () => {});
+    test("Debe mostrar el username", async () => {});
+    test("Debe mostrar el nombre del usuario", async () => {});
   });
 });

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { formatUserName } from "./utils";
 import "./style.css";
-import {getUsers} from "./usuario.service";
+import { getUsers } from "./usuario.service";
+import React from "react";
 
 interface UserType {
   id: number;
@@ -15,13 +16,12 @@ const App = () => {
   const [users, setUsers] = useState<UserType[]>([]);
 
   useEffect(() => {
-    setLoading(true)
-    getUsers().then(data => {
-      setLoading(false)
-      setUsers(data)
+    setLoading(true);
+    getUsers().then((data) => {
+      setLoading(false);
+      setUsers(data);
     });
   }, [getUsers]);
-
 
   return (
     <>
@@ -29,7 +29,7 @@ const App = () => {
       {loading && <div>Cargando usuarios...</div>}
       {!loading && (
         <ul className="card">
-          {users.map(({ id, user, username }: UserType) => (
+          {users.map(({ id, user, username }) => (
             <li key={id}>
               <span>{user}</span> (<span>{formatUserName(username)}</span>)
             </li>

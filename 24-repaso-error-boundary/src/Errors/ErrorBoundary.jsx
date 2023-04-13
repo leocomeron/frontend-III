@@ -16,7 +16,9 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(hasError, errorInfo) {
-    toast("Hay un problema en la aplicación");
+    toast.warn("Hay un problema en la aplicación FIJATE QUE PASSA", {
+      theme: "dark",
+    });
 
     /* Atualizo estados del componente. */
     this.setState({
