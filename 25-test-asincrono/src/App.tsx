@@ -5,15 +5,9 @@ import "./style.css";
 import { getUsers } from "./usuario.service";
 import React from "react";
 
-interface UserType {
-  id: number;
-  user: string;
-  username: string;
-}
-
 const App = () => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [users, setUsers] = useState<UserType[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -21,7 +15,7 @@ const App = () => {
       setLoading(false);
       setUsers(data);
     });
-  }, [getUsers]);
+  }, []);
 
   return (
     <>
